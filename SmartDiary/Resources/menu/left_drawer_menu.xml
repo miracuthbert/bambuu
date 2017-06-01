@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:local="http://schemas.android.com/apk/res-auto">
+  <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/menu_addGoal"
+        android:title="Add goal" />
+    <item
+        android:id="@+id/menu_addGoalTask"
+        android:title="Add goal task" />
+    <item
+        android:id="@+id/menu_addProject"
+        android:title="Add project" />
+    <item
+        android:id="@+id/menu_addProjectTask"
+        android:title="Add project task" />
+    <item
+        android:id="@+id/menu_addBudget"
+        android:title="Add budget" />
+    <item
+        android:id="@+id/menu_addBudgetItem"
+        android:title="Add budget item" />
+    <item
+        android:id="@+id/menu_addShopList"
+        android:title="Add shopping list" />
+    <item
+        android:id="@+id/menu_addShopItem"
+        android:title="Add shopping item" />
+  </group>
+  <item
+      android:title="More">
+      <menu>
+        <item
+            android:id="@+id/menu_help"
+            android:title="Help" />
+        <item
+            android:id="@+id/menu_about"
+            android:title="About" />
+        <item
+            android:id="@+id/menu_apps"
+            android:title="More apps" />
+      </menu>  
+  </item>
+</menu>

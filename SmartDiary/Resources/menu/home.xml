@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:local="http://schemas.android.com/apk/res-auto">
+    <item
+       android:id="@+id/menu_search"
+       android:title="Search"
+       android:icon="@drawable/ic_menu_search"
+       local:showAsAction="always|collapseActionView"
+       local:actionViewClass="android.support.v7.widget.SearchView" />
+  
+    <!-- Goals options-->
+    <group 
+      android:id="@+id/grp_goals_frag"
+      android:visible="false"
+      android:checkableBehavior="none">
+      <item
+       android:id="@+id/menu_delete_goals"
+       android:icon="@drawable/ic_bin"
+       local:showAsAction="always"
+       android:title="Delete Goals" />
+    </group>
+  
+    <!-- Projects options-->
+    <group 
+      android:id="@+id/grp_projects_frag"
+      android:visible="false"
+      android:checkableBehavior="none">
+      <item
+         android:id="@+id/menu_delete_projects"
+         android:icon="@drawable/ic_bin"
+         local:showAsAction="always"
+         android:title="Delete Projects" />
+    </group>
+  
+    <!-- Shopping options-->
+    <group 
+      android:id="@+id/grp_shopping_frag"
+      android:visible="false"
+      android:checkableBehavior="none">
+      <item
+        android:id="@+id/menu_delete_shop_lists"
+        android:icon="@drawable/ic_bin"
+        local:showAsAction="always"
+        android:title="Delete Shopping Lists" />
+    </group>
+  
+    <!-- Budget options-->
+    <group 
+      android:id="@+id/grp_budgets_frag"
+      android:visible="false"
+      android:checkableBehavior="none">
+      <item
+           android:id="@+id/menu_delete_budgets"
+           android:icon="@drawable/ic_bin"
+           local:showAsAction="always"
+           android:title="Delete Budgets" />
+    </group>
+</menu>

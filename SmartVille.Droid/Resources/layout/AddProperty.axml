@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="top">
+
+    <ScrollView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView1">
+      <TableLayout
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:stretchColumns="1">
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/txtInputLayoutPropertyName"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <EditText
+            android:id="@+id/txtPropertyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="textMultiLine"
+            android:hint="property name" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--<android.support.design.widget.TextInputLayout
+      android:id="@+id/txtInputLayoutPropertyGroup"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">-->
+        <Spinner
+          android:id="@+id/spinPropertyGroup"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="3dp"
+          android:layout_marginTop="3dp"
+          android:paddingBottom="5dp"
+          android:paddingTop="5dp"
+          android:hint="property group"  />
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <!--<android.support.design.widget.TextInputLayout
+    android:id="@+id/txtInputLayoutPropertyType"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">-->
+        <Spinner
+          android:id="@+id/spinPropertyType"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="3dp"
+          android:layout_marginTop="3dp"
+          android:paddingBottom="5dp"
+          android:paddingTop="5dp"
+          android:hint="property name"  />
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/txtInputLayoutPropertySize"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <EditText
+            android:id="@+id/txtPropertySize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="numberDecimal"
+            android:hint="property size in sq. feet" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/txtInputLayoutRentInterval"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <EditText
+            android:id="@+id/txtRentInterval"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="numberDecimal"
+            android:hint="rent duration in month(s)" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/txtInputLayoutRentPrice"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <EditText
+            android:id="@+id/txtRentPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="numberDecimal"
+            android:hint="rent price" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/txtInputLayoutPropertyDesc"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <EditText
+            android:id="@+id/txtPropertyDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="textMultiLine"
+            android:hint="property details" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--<android.support.design.widget.TextInputLayout
+    android:id="@+id/txtInputLayoutPropertyStatus"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">-->
+        <Spinner
+          android:id="@+id/spinPropertyStatus"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="3dp"
+          android:layout_marginTop="3dp"
+          android:paddingBottom="5dp"
+          android:paddingTop="5dp"
+          android:hint="property status"  />
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+      </TableLayout>
+    </ScrollView>
+  </LinearLayout>
+</FrameLayout>

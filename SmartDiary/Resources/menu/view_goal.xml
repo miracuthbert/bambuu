@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <!-- Goal details options -->
+  <group
+    android:id="@+id/grp_edit_goal"
+    android:checkableBehavior="none">
+    <item
+         android:id="@+id/menu_goalstatus"
+         android:icon="@drawable/ic_checkmark"
+         app:showAsAction="always"
+         android:title="Status update">
+    </item>
+    <item
+       android:id="@+id/menu_goaledit"
+       android:icon="@drawable/ic_pencil"
+       app:showAsAction="never"
+       android:title="Edit goal" />
+    <item
+       android:id="@+id/menu_goaldel"
+       android:icon="@drawable/ic_bin"
+       app:showAsAction="never"
+       android:title="Delete goal" />
+
+    <item
+      android:id="@+id/menu_goal_tasks"
+      android:icon="@drawable/ic_list"
+      app:showAsAction="never"
+      android:title="Goal tasks" />
+  </group>
+
+  <!-- Goal task options -->
+  <group
+    android:id="@+id/grp_goal_tasks"
+    android:visible="false"
+    android:checkableBehavior="none">
+    <item
+      android:id="@+id/menu_goal_task_add"
+      android:icon="@drawable/ic_plus"
+      app:showAsAction="always"
+      android:title="Add task" />
+    <item
+      android:id="@+id/menu_goal_tasks_del_all"
+      android:icon="@drawable/ic_bin"
+      app:showAsAction="never"
+      android:title="Delete goal tasks" />
+
+    <item
+      android:id="@+id/menu_goal_tasks"
+      android:icon="@drawable/ic_list"
+      app:showAsAction="never"
+      android:title="Goal details" />
+  </group>
+
+</menu>

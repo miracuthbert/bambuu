@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:local="http://schemas.android.com/apk/res-auto">
+  
+  <!-- Project details options -->
+  <group
+    android:id="@+id/grp_edit_project"
+    android:checkableBehavior="none">
+    <item
+         android:id="@+id/menu_projectstatus"
+         android:icon="@drawable/ic_checkmark"
+         local:showAsAction="always"
+         android:title="Status update"/>
+    <item
+       android:id="@+id/menu_projectedit"
+       android:icon="@drawable/ic_pencil"
+       local:showAsAction="never"
+       android:title="Edit project" />
+    <item
+     android:id="@+id/menu_projectdel"
+     android:icon="@drawable/ic_bin"
+     local:showAsAction="never"
+     android:title="Delete project" />
+
+    <item
+      android:id="@+id/menu_project_tasks"
+      android:icon="@drawable/ic_list"
+      local:showAsAction="never"
+      android:title="Project tasks" />
+  </group>
+  
+  <!-- Project task options -->
+  <group
+    android:id="@+id/grp_project_tasks"
+    android:visible="false"
+    android:checkableBehavior="none">
+    <item
+      android:id="@+id/menu_prj_task_add"
+      android:icon="@drawable/ic_plus"
+      local:showAsAction="always"
+      android:title="new item" />
+    <item
+      android:id="@+id/menu_prj_tasks_del_all"
+      android:icon="@drawable/ic_bin"
+      local:showAsAction="never"
+      android:title="Delete project tasks" />
+
+    <item
+      android:id="@+id/menu_project_tasks"
+      android:icon="@drawable/ic_list"
+      local:showAsAction="never"
+      android:title="Project details" />
+  </group>
+  
+</menu>

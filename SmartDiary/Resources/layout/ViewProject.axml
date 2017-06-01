@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/goal_detail_layout"
+    android:padding="5dp">
+  <ScrollView
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/scrollView1">
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="1">
+      <TextView
+          android:text="ID"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/ViewProjectID"
+          android:visibility="gone" />
+      <TextView
+          android:text="Project:"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:id="@+id/textView2"
+          android:textStyle="bold"
+          android:layout_marginBottom="1dp"
+          android:layout_marginTop="10dp" />
+      <TextView
+          android:text="Project"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/ViewProjectName"
+          android:layout_marginBottom="10dp"
+          android:layout_marginTop="1dp"
+          android:selectAllOnFocus="true"
+          style="@style/CustomViewText" />
+      <TextView
+          android:text="Project description:"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:id="@+id/textView3"
+          android:layout_marginTop="10dp"
+          android:layout_marginBottom="1dp"
+          android:textStyle="bold" />
+      <TextView
+          android:text="Description"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/ViewProjectDescription"
+          android:layout_marginBottom="10dp"
+          android:layout_marginTop="1dp"
+          android:selectAllOnFocus="true"
+          style="@style/CustomViewText" />
+      <TextView
+          android:text="Project starts:"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:id="@+id/textView4"
+          android:textStyle="bold"
+          android:layout_marginBottom="1dp"
+          android:layout_marginTop="10dp" />
+      <TextView
+          android:text="Starts"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/ViewProjectAdded"
+          android:layout_marginBottom="10dp"
+          android:layout_marginTop="1dp"
+          style="@style/CustomViewText" />
+      <TextView
+          android:text="Project deadline:"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:id="@+id/textView4"
+          android:textStyle="bold"
+          android:layout_marginBottom="1dp"
+          android:layout_marginTop="10dp" />
+      <TextView
+          android:text="Deadline"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/ViewProjectDeadline"
+          android:layout_marginBottom="10dp"
+          android:layout_marginTop="1dp"
+          style="@style/CustomViewText" />
+      <TextView
+          android:text="Project estimated budget:"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:id="@+id/textView5"
+          android:textStyle="bold"
+          android:layout_marginTop="10dp"
+          android:layout_marginBottom="1dp" />
+      <TextView
+          android:text="Estimated Budget"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/ViewProjectEstBudget"
+          android:layout_marginBottom="10dp"
+          android:layout_marginTop="1dp"
+          style="@style/CustomViewText" />
+      <TextView
+          android:text="Project actual budget:"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:id="@+id/textView5"
+          android:textStyle="bold"
+          android:layout_marginTop="10dp"
+          android:layout_marginBottom="1dp" />
+      <TextView
+          android:text="Actual Budget"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/ViewProjectActBudget"
+          android:layout_marginBottom="10dp"
+          android:layout_marginTop="1dp"
+          style="@style/CustomViewText" />
+      <TextView
+          android:text="Project status:"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:id="@+id/textView5"
+          android:textStyle="bold"
+          android:layout_marginTop="10dp"
+          android:layout_marginBottom="1dp" />
+      <TextView
+          android:text="Status"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/ViewProjectStatus"
+          android:layout_marginBottom="10dp"
+          android:layout_marginTop="1dp"
+          style="@style/CustomViewText" />
+    </TableLayout>
+  </ScrollView>
+</FrameLayout>

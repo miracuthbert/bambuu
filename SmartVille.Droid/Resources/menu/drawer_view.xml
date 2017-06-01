@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:app="http://schemas.android.com/apk/res-auto">
+  
+  <!-- Main Items-->
+  <group android:checkableBehavior="single">
+    <item
+      android:id="@+id/menu_dashboard"
+      android:title="Dashboard" />
+    <item
+      android:id="@+id/menu_groups"
+      android:title="Groups" />
+    <item
+      android:id="@+id/menu_properties"
+      android:title="Properties" />
+    <item
+      android:id="@+id/menu_bills"
+      android:title="Bills" />
+    <item
+      android:id="@+id/menu_rents"
+      android:title="Rent" />
+    <item
+      android:id="@+id/menu_profile"
+      android:title="Profile" />
+    <item
+      android:id="@+id/menu_settings"
+      android:title="Settings" />
+  </group>
+  
+  <!-- New items -->
+  <item android:title="New">
+    <menu>
+      <item
+        android:id="@+id/menu_addGroup"
+        android:title="Add Group" />
+      <item
+        android:id="@+id/menu_addProperty"
+        android:title="Add Property" />
+      <item
+        android:id="@+id/menu_addTenant"
+        android:title="Add Tenant" />
+      <item
+        android:id="@+id/menu_addBill"
+        android:title="Add Bill" />
+      <item
+        android:id="@+id/menu_addRent"
+        android:title="Add Rent" />
+    </menu>
+  </item>
+  
+  <!-- More items -->
+  <item
+      android:title="More">
+    <menu>
+      <item
+          android:id="@+id/menu_help"
+          android:title="Help" />
+      <item
+          android:id="@+id/menu_about"
+          android:title="About" />
+      <item
+          android:id="@+id/menu_apps"
+          android:title="More Apps" />
+    </menu>
+  </item>
+</menu>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.smartdevelopa.smartdiary" android:versionCode="1" android:versionName="1.0" android:installLocation="preferExternal">
+	<uses-sdk android:minSdkVersion="8" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
+	<uses-permission android:name="android.permission.READ_LOGS" />
+	<uses-permission android:name="android.permission.GET_TASKS" />
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<application android:label="Smart Diary" android:icon="@drawable/app_icon" android:theme="@style/MyTheme.Base">
+		<receiver android:name="StartReceiver">
+			<intentFilter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intentFilter>
+		</receiver>
+		<service android:name=".mServices.GoalsService"></service>
+		<service android:name=".mServices.ProjectsServices"></service>
+		<service android:name=".mServices.ShoppingServices"></service>
+	</application>
+</manifest>

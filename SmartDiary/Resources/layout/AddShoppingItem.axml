@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/main_content"
+        android:layout_below="@id/toolbar">
+        <ScrollView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView1">
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/tableLayout1"
+                android:stretchColumns="1"
+                android:minWidth="25px"
+                android:minHeight="25px">
+                <TextView
+                    android:text="Choose shopping list:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView1"
+                    android:layout_marginBottom="5dp" />
+                <Spinner
+                    android:id="@+id/spinItemList"
+                    android:layout_marginTop="5dp" />
+                <TextView
+                    android:text="Item name:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView2"
+                    android:layout_marginTop="5dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtShopItemName"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="5dp"
+                    android:hint="item..." />
+                <TextView
+                    android:text="Item quantity:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView3" />
+                <EditText
+                    android:inputType="numberDecimal"
+                    android:id="@+id/txtShopItemQty"
+                    android:hint="1,2.00,0.25...." />
+                <TextView
+                    android:text="Item quantity measure:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView4"
+                    android:layout_marginTop="5dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtShopItemMeasure"
+                    android:layout_marginTop="3dp"
+                    android:hint="kg, grams, meter..." />
+                <TextView
+                    android:text="Expected price:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView5"
+                    android:layout_marginTop="5dp" />
+                <EditText
+                    android:inputType="numberDecimal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/itemExpPrice"
+                    android:hint="expected price" />
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

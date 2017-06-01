@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">SmartVille</string>
+
+  <!-- Dummy text -->
+  <string name="DummyText">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas dictum elit ut ultricies. Donec ipsum quam, aliquam ultrices iaculis et, eleifend vitae risus. Aliquam placerat nisl nec malesuada accumsan. Nulla eu nibh eu urna consectetur egestas at ut turpis. Aenean sollicitudin at elit eget laoreet. Sed maximus magna non nisl sodales efficitur vitae tristique risus. Fusce quis iaculis purus. Curabitur et pellentesque nunc, bibendum laoreet augue. Sed malesuada dictum nibh, non tempus metus tincidunt ullamcorper. Ut maximus mollis ex non faucibus. Nullam molestie tincidunt suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas eu aliquam velit, id efficitur justo. Donec gravida nunc id tellus volutpat, in pretium nisi aliquet.
+  </string>
+
+  <!-- Options -->
+  <string name="profile">Profile</string>
+  <string name="menu_settings">Settings</string>
+
+  <!-- Fragment Titles -->
+  <string name="add_group">Add Group</string>
+  <string name="add_property">Add Property</string>
+  <string name="add_tenant">Add Tenant</string>
+  <string name="add_bill">Add Bill</string>
+  <string name="add_rent">Add Rent</string>
+
+</resources>

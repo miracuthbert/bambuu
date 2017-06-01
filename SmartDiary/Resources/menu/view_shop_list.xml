@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:local="http://schemas.android.com/apk/res-auto">
+  
+  <!-- Shopping Details options-->
+  <group 
+    android:id="@+id/grp_edit_shop_list"
+    android:checkableBehavior="none">
+    <item
+      android:id="@+id/menu_slist_status"
+      android:icon="@drawable/ic_checkmark"
+      local:showAsAction="always"
+      android:title="Status">
+      <menu>
+        <item
+              android:id="@+id/menu_slist_pend"
+              android:title="Pending" />
+        <item
+              android:id="@+id/menu_slist_poned"
+              android:title="Postponed" />
+        <item
+              android:id="@+id/menu_slist_done"
+              android:title="Completed" />
+      </menu>
+    </item>
+    <item
+      android:id="@+id/menu_slist_edit"
+      android:icon="@drawable/ic_pencil"
+      local:showAsAction="always"
+      android:title="Edit" />
+  </group>
+  
+  <!-- Shopping Items options-->
+  <group
+    android:id="@+id/grp_shop_list_items"
+    android:visible="false"
+    android:checkableBehavior="none">
+    <item
+      android:id="@+id/menu_sitem_add"
+      android:icon="@drawable/ic_plus"
+      local:showAsAction="always"
+      android:title="new item" />
+    <item
+      android:id="@+id/menu_sitem_del_all"
+      android:icon="@drawable/ic_bin"
+      local:showAsAction="always"
+      android:title="Delete all" />
+  </group>
+  
+  <item
+    android:id="@+id/menu_slist_items"
+    android:icon="@drawable/ic_list"
+    local:showAsAction="always"
+    android:title="Items" />
+</menu>

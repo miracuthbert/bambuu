@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="top">
+
+    <ScrollView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView1">
+      <TableLayout
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:stretchColumns="1">
+
+        <!-- budget for -->
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/txtInputLayoutBudgetFor"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <EditText
+            android:id="@+id/txtBudgetFor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="budget for" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- budget amount -->
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/txtInputLayoutBudgetAmount"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <EditText
+            android:id="@+id/txtBudgetAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="numberDecimal"
+            android:hint="amount" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- budget date from -->
+        <TextView
+            android:text="From date:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="3dp"
+            android:layout_marginBottom="10dp" />
+        <RelativeLayout
+            android:id="@+id/relativeLayout1">
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/budgetFrom"
+              android:layout_alignParentLeft="true"
+              android:layout_margin="1dp"
+              android:paddingBottom="10dp"
+              android:paddingTop="10dp"
+              android:clickable="true"
+              android:hint="goal start"
+              android:layout_toLeftOf="@+id/budgetFromReset"
+              android:background="@drawable/border_bottom"
+              android:paddingLeft="5dp"
+              android:textAppearance="?android:attr/textAppearanceMedium" />
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/budgetFromReset"
+              android:layout_alignParentRight="true"
+              android:layout_margin="3dp"
+              android:clickable="true"
+              android:drawableStart="@drawable/ic_undo"
+              android:background="@drawable/border_full"
+              android:drawablePadding="3dp"
+              android:paddingBottom="1dp"
+              android:paddingTop="1dp" />
+        </RelativeLayout>
+
+        <!-- budget date to -->
+        <TextView
+          android:text="Budget To:"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/textView4"
+          android:layout_marginTop="10dp"
+          android:layout_marginBottom="10dp"
+          android:paddingLeft="3dp" />
+
+        <RelativeLayout
+          android:id="@+id/relativeLayout2">
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/budgetTo"
+              android:clickable="true"
+              android:layout_alignParentLeft="true"
+              android:layout_margin="2dp"
+              android:layout_toLeftOf="@+id/budgetToReset"
+              android:paddingTop="10dp"
+              android:paddingBottom="10dp"
+              android:hint="goal deadline"
+              android:background="@drawable/border_bottom"
+              android:paddingLeft="5dp"
+              android:textAppearance="?android:attr/textAppearanceMedium" />
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/budgetToReset"
+              android:background="@drawable/border_full"
+              android:layout_alignParentRight="true"
+              android:layout_margin="3dp"
+              android:clickable="true"
+              android:drawableStart="@android:drawable/ic_menu_close_clear_cancel"
+              android:drawablePadding="3dp"
+              android:paddingTop="1dp"
+              android:paddingBottom="1dp" />
+        </RelativeLayout>
+
+        <!-- budget details -->
+        <android.support.design.widget.TextInputLayout
+        android:id="@+id/txtInputLayoutBudgetDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+          <EditText
+            android:id="@+id/txtBudgetDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="textMultiLine"
+            android:hint="budget details" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- budget priority -->
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:layout_gravity="top">
+          <TextView
+            android:text="Budget priority:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewMPty"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+          <Spinner
+            android:id="@+id/spinBudgetPriority"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:hint="budget priority"  />
+        </LinearLayout>
+
+      </TableLayout>
+    </ScrollView>
+  </LinearLayout>
+</FrameLayout>

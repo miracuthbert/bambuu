@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:local="http://schemas.android.com/apk/res-auto">
+  <group
+    android:checkableBehavior="single">
+    <item
+        android:id="@+id/menu_goPersonal"
+        android:title="Switch to Personal" />
+    <item
+        android:id="@+id/menu_profile"
+        android:title="My Profile" />
+  </group>
+
+  <item
+    android:id="@+id/grp_pro_menu"
+    android:title="Pro">
+    <item
+        android:id="@+id/menu_addMeeting"
+        android:title="Add meeting appointment" />
+    <item
+        android:id="@+id/menu_addNote"
+        android:title="Add note" />
+  </item>
+
+  <item
+      android:title="More">
+    <menu>
+      <item
+          android:id="@+id/menu_help"
+          android:title="Help" />
+      <item
+          android:id="@+id/menu_about"
+          android:title="About" />
+      <item
+          android:id="@+id/menu_apps"
+          android:title="More apps" />
+    </menu>
+  </item>
+</menu>

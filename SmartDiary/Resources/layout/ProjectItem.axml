@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:text="ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProjectID"
+        android:visibility="gone" />
+    <TextView
+        android:text="Project"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProjectName"
+        android:textStyle="bold"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginBottom="1dp"
+        android:paddingLeft="3dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:text="Deadline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProjectDeadline"
+        android:selectAllOnFocus="true"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:layout_marginBottom="1dp"
+        android:paddingLeft="3dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <TextView
+        android:text="Budget"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProjectBudget"
+        android:paddingLeft="3dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" />
+    <TextView
+        android:text="Status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProjectStatus"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginBottom="1dp"
+        android:paddingLeft="3dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProjectNotification"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="3dp" />
+</LinearLayout>

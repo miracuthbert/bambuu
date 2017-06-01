@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:local="http://schemas.android.com/apk/res-auto">
+  <item
+       android:id="@+id/menu_task_done"
+       android:icon="@drawable/ic_checkmark"
+       local:showAsAction="always"
+       android:title="Completed" />
+  <item
+       android:id="@+id/menu_task_undo"
+       android:icon="@drawable/ic_xcross"
+       local:showAsAction="always"
+       android:title="Pending" />
+  <item
+       android:id="@+id/menu_task_del"
+       android:icon="@drawable/ic_bin"
+       local:showAsAction="always"
+       android:title="Delete" />
+</menu>

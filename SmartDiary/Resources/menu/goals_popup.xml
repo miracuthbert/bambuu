@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:local="http://schemas.android.com/apk/res-auto">
+  <item
+     android:id="@+id/pop_goal_view"
+     android:title="View goal" />
+  <item
+       android:id="@+id/pop_goal_edit"
+       android:title="Edit goal" />
+  <item
+       android:id="@+id/pop_goal_delete"
+       android:title="Delete goal" />
+  <item
+       android:id="@+id/pop_goal_status"
+       android:title="Update status" />
+
+</menu>

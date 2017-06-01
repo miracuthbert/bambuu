@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/task_detail_layout">
+  <include
+      android:id="@+id/toolbar"
+      layout="@layout/toolbar" />
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:id="@+id/goal_wrapper"
+      android:padding="5dp"
+      android:layout_below="@id/toolbar">
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView1">
+      <TableLayout
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:stretchColumns="1">
+        <TextView
+            android:text="ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TaskID"
+            android:visibility="gone" />
+        <TextView
+            android:text="Task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TaskName"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginBottom="1dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold" />
+        <TextView
+            android:text="Task details:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/textView3"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="1dp"
+            android:textStyle="bold" />
+        <TextView
+            android:text="Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TaskDetails"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="1dp"
+            style="@style/CustomViewText"
+            android:textIsSelectable="true"
+            android:drawableBottom="@drawable/border_bottom" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout1"
+            android:layout_marginBottom="1dp">
+          <TextView
+              android:text="Starts:"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:id="@+id/textView2"
+              android:textStyle="bold"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:paddingBottom="5dp"
+              android:paddingTop="5dp"
+              android:paddingLeft="3dp" />
+          <TextView
+              android:text="Start"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:id="@+id/TaskStarts"
+              style="@style/CustomViewText"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:paddingBottom="5dp"
+              android:paddingLeft="3dp"
+              android:paddingTop="5dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2"
+            android:layout_marginBottom="1dp">
+          <TextView
+              android:text="Deadline:"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:textStyle="bold" 
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:id="@+id/textView3"
+              android:paddingLeft="3dp"
+              android:paddingBottom="5dp"
+              android:paddingTop="5dp" />
+          <TextView
+              android:text="Deadline"
+              android:id="@+id/TaskDeadline"
+              style="@style/CustomViewText"
+              android:paddingBottom="5dp"
+              android:paddingTop="5dp"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:paddingLeft="3dp"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TaskCostWrap"
+            android:layout_marginBottom="3dp">
+          <TextView
+              android:text="Expected cost:"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:textStyle="bold" 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/textView4"
+              android:paddingLeft="3dp"
+              android:paddingBottom="5dp"
+              android:paddingTop="5dp" />
+          <TextView
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/TaskExpCost"
+              style="@style/CustomViewText"
+              android:paddingBottom="5dp"
+              android:paddingLeft="3dp"
+              android:paddingTop="5dp"
+              android:hint="expected cost"
+              android:layout_marginBottom="1dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TaskCostWrap2"
+            android:layout_marginBottom="3dp">
+          <TextView
+              android:text="Actual cost:"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:textStyle="bold" 
+              android:id="@+id/textView5"
+              android:paddingTop="5dp"
+              android:paddingBottom="5dp"
+              android:paddingLeft="3dp"
+              android:layout_height="wrap_content"
+              android:layout_width="wrap_content" />
+          <TextView
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:id="@+id/TaskActCost"
+              android:hint="actual cost"
+              style="@style/CustomViewText"
+              android:paddingBottom="5dp"
+              android:paddingLeft="3dp"
+              android:paddingTop="5dp"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/TaskStatus"
+            android:text="Status"
+            android:textStyle="bold" 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="3dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TaskNotification"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:paddingLeft="3dp" />
+      </TableLayout>
+    </ScrollView>
+  </LinearLayout>
+</RelativeLayout>

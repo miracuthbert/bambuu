@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/EditGoalLayout">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/addgoaltask_content"
+        android:layout_below="@id/toolbar">
+        <ScrollView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView1">
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:stretchColumns="1">
+                <TextView
+                    android:text="Project:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2"
+                    android:layout_gravity="center" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtProject"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="project title..." />
+                <TextView
+                    android:text="Project description:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp" />
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtProjectDescription"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:hint="project description..." />
+                <TextView
+                      android:text="Project starts:"
+                      android:textAppearance="?android:attr/textAppearanceMedium"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/textView4"
+                      android:layout_marginTop="10dp"
+                      android:layout_marginBottom="10dp" />
+                <RelativeLayout
+                  android:id="@+id/relativeLayout1">
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/dteProjectStarts"
+                      android:layout_alignParentLeft="true"
+                      android:layout_margin="1dp"
+                      android:paddingBottom="10dp"
+                      android:paddingTop="10dp"
+                      android:clickable="true"
+                      android:hint="project starts"
+                      android:layout_toLeftOf="@+id/dteProjectStartsReset"
+                      android:background="@drawable/border_bottom"
+                      android:paddingLeft="5dp"
+                      android:textAppearance="?android:attr/textAppearanceMedium" />
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/dteProjectStartsReset"
+                      android:layout_alignParentRight="true"
+                      android:layout_margin="3dp"
+                      android:clickable="true"
+                      android:drawableStart="@android:drawable/ic_menu_close_clear_cancel"
+                      android:background="@drawable/border_full"
+                      android:drawablePadding="3dp"
+                      android:paddingBottom="1dp"
+                      android:paddingTop="1dp" />
+              </RelativeLayout>
+                <TextView
+                    android:text="Project ends:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView5"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp" />
+                <RelativeLayout
+                    android:id="@+id/relativeLayout2">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/dteProjectDeadline"
+                        android:clickable="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="2dp"
+                        android:layout_toLeftOf="@+id/dteProjectDeadlineReset"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:hint="project deadline"
+                        android:background="@drawable/border_bottom"
+                        android:paddingLeft="5dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/dteProjectDeadlineReset"
+                        android:background="@drawable/border_full"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="3dp"
+                        android:clickable="true"
+                        android:drawableStart="@android:drawable/ic_menu_close_clear_cancel"
+                        android:drawablePadding="3dp"
+                        android:paddingTop="1dp"
+                        android:paddingBottom="1dp" />
+                </RelativeLayout>
+                <TextView
+                    android:text="Project actual budget:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6" />
+                <EditText
+                    android:inputType="numberDecimal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtProjectBudget"
+                    android:hint="project actual budget" />
+                <TextView
+                    android:text="Project status:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView6"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp" />
+                <Spinner
+                    android:id="@+id/spinProjectStatus"
+                    android:entries="@array/projectStatus"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

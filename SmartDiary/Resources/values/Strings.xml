@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">Smart Diary</string>
+
+  <string name="openedDrawer">Menu Close</string>
+  <string name="closedDrawer">Menu Open</string>
+
+  <string-array name="goalStatus">
+    <item>Pending</item>
+    <item>Completed</item>
+  </string-array>
+
+  <string-array name="projectStatus">
+    <item>Pending</item>
+    <item>Postponed</item>
+    <item>Completed</item>
+  </string-array>
+
+  <string-array name="budgetItemType">
+    <item>Expense</item>
+    <item>Income</item>
+  </string-array>
+
+  <string-array name="itemPriority">
+    <item>Low</item>
+    <item>Normal</item>
+    <item>Important</item>
+  </string-array>
+</resources>
