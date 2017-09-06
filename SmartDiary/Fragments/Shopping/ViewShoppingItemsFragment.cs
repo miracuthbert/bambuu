@@ -131,16 +131,20 @@ namespace SmartDiary.Droid
 
             switch (item.ItemId)
             {
-                //case Resource.Id.pop_shop_item_view:  //view item
-                //    intent = new Intent(view.Context, typeof(ViewGoalActivity));
-                //    intent.PutExtra("GoalId", goalId);
-                //    StartActivity(intent);
-                //    return true;
-                //case Resource.Id.pop_shop_list_edit:  //edit item
-                //    intent = new Intent(view.Context, typeof(EditGoalActivity));
-                //    intent.PutExtra("GoalId", goalId.ToString());
-                //    StartActivity(intent);
-                //    return true;
+                case Resource.Id.pop_shop_item_view:  //view item
+                    intent = new Intent(view.Context, typeof(ViewActivity));
+                    intent.PutExtra("PassedId", listId);
+                    intent.PutExtra("LoadView", Resource.Layout.ViewShoppingItem.ToString());
+                    StartActivity(intent);
+                    return true;
+
+                case Resource.Id.pop_shop_list_edit:  //edit item
+                    intent = new Intent(view.Context, typeof(AddEditActivity));
+                    intent.PutExtra("PassedId", listId);
+                    intent.PutExtra("LoadView", Resource.Layout.AddShoppingItem.ToString());
+                    StartActivity(intent);
+                    return true;
+
                 case Resource.Id.pop_shop_item_delete:  //delete item
                     dbh = new DBHelper();
                     AlertDialog.Builder builder = new AlertDialog.Builder(view.Context);

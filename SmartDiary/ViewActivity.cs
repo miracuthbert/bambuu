@@ -18,16 +18,14 @@ using SmartDiary.Droid.Fragments;
 namespace SmartDiary.Droid
 {
     [Activity(Label = "@string/ApplicationName", Icon = "@drawable/icon", Theme = "@style/Theme.DesignDefault")]
-    public class AddEditActivity : AppCompatActivity
+    public class ViewActivity : AppCompatActivity
     {
         private int mFrameLayout;
+        private int passedId;
         private TextView mFragTitle;
         private SupportFragment mCurrentFragment;
-        private AddBudgetFragment mAddBudgetFragment;
-        private AddBudgetItemFragment mAddBudgetItemFrag;
-        private AddMeetingFragment mAddMeetingFrag;
+        private ViewShoppingItemFragment mViewShoppingItemFrag;
         private Stack<SupportFragment> mStackFrag;
-
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -36,13 +34,20 @@ namespace SmartDiary.Droid
             // Create your application here
             SetContentView(Resource.Layout.AddEdit);
 
+            //catch passed layout
             string mLoadView = Intent.Extras.Get("LoadView").ToString();
+
+            //catch passed if
+            passedId = Convert.ToInt32(Intent.Extras.Get("PassedId").ToString());
 
             SupportToolbar toolBar = FindViewById<SupportToolbar>(Resource.Id.toolBar);
             SetSupportActionBar(toolBar);
 
             SupportActionBar ab = SupportActionBar;
-            ab.SetDisplayShowTitleEnabled(false);
+            ab.SetDisplayHomeAsUpEnabled(true);
+            ab.SetHomeButtonEnabled(true);
+            ab.SetDisplayShowTitleEnabled(true);
+            ab.SetTitle(Resource.String.viewActivityTitle);
 
             //Get Fragment Title Holder
             mFragTitle = FindViewById<TextView>(Resource.Id.textFragmentTitle);
@@ -51,9 +56,7 @@ namespace SmartDiary.Droid
             mFrameLayout = Resource.Id.fragmentContainer;
 
             //instantiate fragments
-            mAddBudgetFragment = new AddBudgetFragment();
-            mAddBudgetItemFrag = new AddBudgetItemFragment();
-            mAddMeetingFrag = new AddMeetingFragment();
+            mViewShoppingItemFrag = new ViewShoppingItemFragment();
 
             mStackFrag = new Stack<SupportFragment>();
 
@@ -61,11 +64,11 @@ namespace SmartDiary.Droid
         }
 
         //on create options menu
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.add_cancel_menu, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
+        //public override bool OnCreateOptionsMenu(IMenu menu)
+        //{
+        //    MenuInflater.Inflate(Resource.Menu.add_cancel_menu, menu);
+        //    return base.OnCreateOptionsMenu(menu);
+        //}
 
         //on options menu item click
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -73,15 +76,15 @@ namespace SmartDiary.Droid
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    if (SupportFragmentManager.BackStackEntryCount > 0)
-                    {
-                        SupportFragmentManager.PopBackStack();
-                        mCurrentFragment = mStackFrag.Pop();
-                    }
-                    else
-                    {
-                        Finish();
-                    }
+                    //    if (SupportFragmentManager.BackStackEntryCount > 0)
+                    //    {
+                    //        SupportFragmentManager.PopBackStack();
+                    //        mCurrentFragment = mStackFrag.Pop();
+                    //    }
+                    //    else
+                    //    {
+                    Finish();
+                    //}
                     return true;
 
                 case Resource.Id.menu_new_cancel:
@@ -93,7 +96,10 @@ namespace SmartDiary.Droid
             }
         }
 
-        //Method to load fragment
+        /// <summary>
+        /// Method to load fragment
+        /// </summary>
+        /// <param name="loadView"></param>
         void LoadView(string loadView)
         {
             int mLoadView = Convert.ToInt32(loadView);
@@ -102,45 +108,35 @@ namespace SmartDiary.Droid
 
             switch (mLoadView)
             {
-                case Resource.Layout.AddBudget:
-                    mFragTitle.Text = "Add Budget";
-                    trans.Add(mFrameLayout, mAddBudgetFragment, "Add Budget");
-                    mCurrentFragment = mAddBudgetFragment;
-                    trans.Commit();
-                    break;
-
-                case Resource.Layout.AddBudgetItem:
-                    mFragTitle.Text = "Add Budget Item";
-                    trans.Add(mFrameLayout, mAddBudgetItemFrag, "Add Budget Item");
-                    mCurrentFragment = mAddBudgetItemFrag;
-                    trans.Commit();
-                    break;
-
-                case Resource.Layout.AddMeeting:
-                    mFragTitle.Text = "Add Meeting Schedule";
-                    trans.Add(mFrameLayout, mAddMeetingFrag, "Add Meeting");
-                    mCurrentFragment = mAddMeetingFrag;
+                case Resource.Layout.ViewShoppingItem:
+                    mFragTitle.Text = "Shopping Item";
+                    trans.Add(mFrameLayout, mViewShoppingItemFrag, "Shopping Item");
+                    mCurrentFragment = mViewShoppingItemFrag;
                     trans.Commit();
                     break;
             }
         }
 
-        //On back pressed
+        /// <summary>
+        /// On back pressed
+        /// </summary>
+        public override void OnBackPressed()
+        {
+            //if (SupportFragmentManager.BackStackEntryCount > 0)
+            //{
+            //    SupportFragmentManager.PopBackStack();
+            //    mCurrentFragment = mStackFrag.Pop();
+            //}
+            //else
+            //{
+                base.OnBackPressed();
+            //}
+        }
 
-        //public override void OnBackPressed()
-        //{
-        //    if (SupportFragmentManager.BackStackEntryCount > 0)
-        //    {
-        //        SupportFragmentManager.PopBackStack();
-        //        mCurrentFragment = mStackFrag.Pop();
-        //    }
-        //    else
-        //    {
-        //        base.OnBackPressed();
-        //    }
-        //}
-
-        //Method to handle fragment switch
+        /// <summary>
+        /// Method to handle fragment switch
+        /// </summary>
+        /// <param name="fragment"></param>
         private void ShowFragment(SupportFragment fragment)
         {
             var trans = SupportFragmentManager.BeginTransaction();

@@ -895,7 +895,33 @@ namespace SmartDiary.Droid.ViewModel
 
             return output;
         }
+        
+        //Read ShoppingItem
+        /// <summary>
+        /// Get goal from db
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string[] ReadShoppingItem(int id)
+        {
+            ICursor output = null;
+            var sql = "SELECT * FROM ShoppingItems WHERE _id = " + id;
+            output = db.RawQuery(sql, null);
 
+            string[] listItem = new string[10];
+
+            output.MoveToFirst();
+            listItem[0] = output.GetString(0);  //id
+            listItem[1] = output.GetString(1);  //item
+            listItem[2] = output.GetString(2);  //list
+            listItem[3] = output.GetString(3);  //qty
+            listItem[4] = output.GetString(4);  //msr
+            listItem[5] = output.GetString(5);  //exp price
+            listItem[6] = output.GetString(6);  //act price
+            listItem[7] = output.GetString(7);  //status
+
+            return listItem;
+        }
         //Update Shopping Item
         /// <summary>
         /// 

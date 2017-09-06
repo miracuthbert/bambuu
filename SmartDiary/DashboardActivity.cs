@@ -14,12 +14,14 @@ using SupportFragment = Android.Support.V4.App.Fragment;
 using SupportFragmentManager = Android.Support.V4.App.FragmentManager;
 using SupportToolbar = Android.Support.V7.Widget.Toolbar;
 using SupportActionBar = Android.Support.V7.App.ActionBar;
+using AlertDialog = Android.App.AlertDialog;
 using Android.Support.V7.App;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Support.V4.App;
 using Java.Lang;
 using Android.Util;
+using SmartDiary.Droid.ViewModel;
 
 namespace SmartDiary.Droid
 {
@@ -61,16 +63,6 @@ namespace SmartDiary.Droid
 
             tabs.SetupWithViewPager(viewPager);
 
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-
-            fab.Click += (o, e) =>
-            {
-                View anchor = o as View;
-                Snackbar.Make(anchor, "Action", Snackbar.LengthLong).SetAction("Action", v =>
-                {
-                    //Perform action
-                }).Show();
-            };
         }
 
         private void SetUpViewPager(ViewPager viewPager)
@@ -92,7 +84,8 @@ namespace SmartDiary.Droid
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            //Intent intent;
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog mAlertDialog = builder.Create();
 
             switch (item.ItemId)
             {
@@ -100,6 +93,101 @@ namespace SmartDiary.Droid
                     mDrawerLayout.OpenDrawer((int)GravityFlags.Left);
                     return true;
 
+
+                //delete goals
+                case Resource.Id.menu_delete_goals:
+                    mAlertDialog.SetTitle("Delete all goals");
+                    mAlertDialog.SetIcon(Resource.Drawable.ic_bin);
+                    mAlertDialog.SetMessage("Are you sure?");
+
+                    //buttons
+                    mAlertDialog.SetButton2("Yes", (s, ev) =>
+                    {
+                        DBHelper dbh = new DBHelper();
+
+                        string result = dbh.DeleteAllGoals();
+
+                        if (result.Equals("ok"))
+                        {
+                            Snackbar.Make(mDrawerLayout, "All goals deleted!", Snackbar.LengthShort).Show();
+                        }
+                        else
+                        {
+                            Snackbar.Make(mDrawerLayout, result != null ? result : "Failed deleting goals!", Snackbar.LengthShort).SetAction("Ok", (v) => { }).Show();
+                        }
+                    });
+
+                    mAlertDialog.SetButton("No", (s, ev) =>
+                    {
+                        Snackbar.Make(mDrawerLayout, "Action cancelled", Snackbar.LengthLong).SetAction("Ok", (v) => { }).Show();
+                    });
+
+                    mAlertDialog.Show();
+
+                    return true;
+
+                //delete projects
+                case Resource.Id.menu_delete_projects:
+                    mAlertDialog.SetTitle("Delete all projects");
+                    mAlertDialog.SetIcon(Resource.Drawable.ic_bin);
+                    mAlertDialog.SetMessage("Are you sure?");
+
+                    //buttons
+                    mAlertDialog.SetButton2("Yes", (s, ev) =>
+                    {
+                        Snackbar.Make(mDrawerLayout, "All projects deleted!", Snackbar.LengthLong).SetAction("Ok", (v) => { }).Show();
+                    });
+
+                    mAlertDialog.SetButton("No", (s, ev) =>
+                    {
+                        Snackbar.Make(mDrawerLayout, "Action cancelled", Snackbar.LengthLong).SetAction("Ok", (v) => { }).Show();
+                    });
+
+                    mAlertDialog.Show();
+
+                    return true;
+
+                //delete budgets
+                case Resource.Id.menu_delete_budgets:
+                    mAlertDialog.SetTitle("Delete all budgets");
+                    mAlertDialog.SetIcon(Resource.Drawable.ic_bin);
+                    mAlertDialog.SetMessage("Are you sure?");
+
+                    //buttons
+                    mAlertDialog.SetButton2("Yes", (s, ev) =>
+                    {
+                        Snackbar.Make(mDrawerLayout, "All budgets deleted!", Snackbar.LengthLong).SetAction("Ok", (v) => { }).Show();
+                    });
+
+                    mAlertDialog.SetButton("No", (s, ev) =>
+                    {
+                        Snackbar.Make(mDrawerLayout, "Action cancelled", Snackbar.LengthLong).SetAction("Ok", (v) => { }).Show();
+                    });
+
+                    mAlertDialog.Show();
+
+                    return true;
+
+                //delete shopping lists
+                case Resource.Id.menu_delete_shop_lists:
+                    mAlertDialog.SetTitle("Delete all shopping lists");
+                    mAlertDialog.SetIcon(Resource.Drawable.ic_bin);
+                    mAlertDialog.SetMessage("Are you sure?");
+
+                    //buttons
+                    mAlertDialog.SetButton2("Yes", (s, ev) =>
+                    {
+                        Snackbar.Make(mDrawerLayout, "All shopping lists deleted!", Snackbar.LengthLong).SetAction("Ok", (v) => { }).Show();
+                    });
+
+                    mAlertDialog.SetButton("No", (s, ev) =>
+                    {
+                        Snackbar.Make(mDrawerLayout, "Action cancelled", Snackbar.LengthLong).SetAction("Ok", (v) => { }).Show();
+                    });
+
+                    mAlertDialog.Show();
+
+                    return true;
 
                 default:
                     return base.OnOptionsItemSelected(item);

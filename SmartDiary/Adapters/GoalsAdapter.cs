@@ -61,6 +61,7 @@ namespace SmartDiary.Droid.ViewModel
             TextView myGoal = convertView.FindViewById<TextView>(Resource.Id.GoalName);
             TextView myGoalDeadline = convertView.FindViewById<TextView>(Resource.Id.GoalDeadline);
             TextView myGoalStatus = convertView.FindViewById<TextView>(Resource.Id.GoalStatus);
+            ImageView myGoalStatusIcon = convertView.FindViewById<ImageView>(Resource.Id.GoalStatusIcon);
             TextView myGoalNotify = convertView.FindViewById<TextView>(Resource.Id.GoalNotification);
 
             goal = goals[position];
@@ -69,6 +70,7 @@ namespace SmartDiary.Droid.ViewModel
             myGoal.Text = goal.Goal;
             myGoalDeadline.Text = goal.GoalDeadline;
             myGoalStatus.Text = goal.GoalStatus;
+            myGoalStatusIcon.SetImageResource(Resource.Drawable.ic_hour_glass);
 
             int days = Convert.ToInt32(DateTime.Parse(goal.GoalDeadline).Subtract(DateTime.Today).TotalDays);
 
@@ -77,35 +79,32 @@ namespace SmartDiary.Droid.ViewModel
                 myGoalStatus.SetTextColor(Android.Graphics.Color.Rgb(183, 28, 28));
                 if (days < 0)
                 {
-                    //convertView.SetBackgroundColor(Android.Graphics.Color.Rgb(183, 28, 28));
-                    //myGoalStatus.SetTextColor(Android.Graphics.Color.White);
                     myGoalNotify.Text = "Goal is "+ (days * -1) +" day(s) past deadline. Do something!";
-                    myGoalNotify.SetBackgroundColor(Android.Graphics.Color.Rgb(236, 64, 122));
+                    myGoalNotify.SetTextColor(Android.Graphics.Color.Rgb(236, 64, 122));
                 }
                 else if (days == 0)
                 {
-                    //convertView.SetBackgroundColor(Android.Graphics.Color.Rgb(255, 82, 82));
                     myGoalNotify.Text = "Today is the goal's deadline. Do something!";
-                    myGoalNotify.SetBackgroundColor(Android.Graphics.Color.Rgb(240, 98, 146));
+                    myGoalNotify.SetTextColor(Android.Graphics.Color.Rgb(240, 98, 146));
                 }
                 else if (days > 0 && days <= 14)
                 {
-                    //convertView.SetBackgroundColor(Android.Graphics.Color.Rgb(239, 154, 154));
                     myGoalNotify.Text = days + " day(s) left to goal deadline. Do something!";
-                    myGoalNotify.SetBackgroundColor(Android.Graphics.Color.Rgb(244, 143, 177));
+                    myGoalNotify.SetTextColor(Android.Graphics.Color.Rgb(244, 143, 177));
                 }
                 else if (days > 14)
                 {
                     myGoalNotify.Text = days + " days left to goal deadline";
+                    myGoalNotify.SetTextColor(Android.Graphics.Color.Rgb(183, 28, 28));
                 }
             }
             else if(goal.GoalStatus.Equals("Completed"))
             {
-                convertView.SetBackgroundColor(Android.Graphics.Color.Rgb(46, 125, 50));
-                myGoal.SetTextColor(Android.Graphics.Color.White);
-                myGoalStatus.SetTextColor(Android.Graphics.Color.White);
-                myGoalNotify.Visibility = ViewStates.Gone;
-                myGoalDeadline.Visibility = ViewStates.Gone;
+                myGoal.SetTextColor(Android.Graphics.Color.Gray);
+                myGoalStatus.SetTextColor(Android.Graphics.Color.Green);
+                myGoalStatusIcon.SetImageResource(Resource.Drawable.ic_checkmark);
+                myGoalNotify.Text = "Goal completed at " + goal.GoalUpdated;
+                myGoalDeadline.SetTextColor(Android.Graphics.Color.Gray);
             }
 
             return convertView;

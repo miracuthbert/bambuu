@@ -25,6 +25,7 @@ namespace SmartDiary.Droid
         private SupportFragment mCurrentFragment;
         private ViewShoppingListFragment mShopListFrag;
         private ViewShoppingItemsFragment mListItemsFrag;
+        private ViewShoppingItemFragment mListItemFrag;
         private Stack<SupportFragment> mStackFrag;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -48,6 +49,7 @@ namespace SmartDiary.Droid
 
             mShopListFrag = new ViewShoppingListFragment();
             mListItemsFrag = new ViewShoppingItemsFragment();
+            mListItemFrag = new ViewShoppingItemFragment();
 
             mStackFrag = new Stack<SupportFragment>();
 
@@ -65,14 +67,14 @@ namespace SmartDiary.Droid
 
         public override void OnBackPressed()
         {
-            if(SupportFragmentManager.BackStackEntryCount > 0)
+            if (SupportFragmentManager.BackStackEntryCount > 0)
             {
                 SupportFragmentManager.PopBackStack();
                 mCurrentFragment = mStackFrag.Pop();
             }
             else
             {
-                base.OnBackPressed(); 
+                base.OnBackPressed();
             }
         }
 
@@ -110,7 +112,7 @@ namespace SmartDiary.Droid
                     }
                     else
                     {
-                        Finish(); 
+                        Finish();
                     }
                     return true;
 
@@ -143,7 +145,7 @@ namespace SmartDiary.Droid
                     }
                     else
                     {
-                        ShowFragment(mListItemsFrag); 
+                        ShowFragment(mListItemsFrag);
                     }
                     return true;
 

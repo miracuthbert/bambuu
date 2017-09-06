@@ -47,11 +47,7 @@ namespace SmartDiary.Droid
 
             FloatingActionButton fab = Activity.FindViewById<FloatingActionButton>(Resource.Id.fab);
 
-            fab.Click += (o, e) =>
-            {
-                Intent intent = new Intent(view.Context, typeof(AddShoppingListActivity));
-                StartActivity(intent);
-            };
+            fab.Click += Fab_Click;
 
             mShopList = view.FindViewById<ListView>(Resource.Id.listShopLists);
 
@@ -66,6 +62,12 @@ namespace SmartDiary.Droid
             mShopList.FastScrollEnabled = true;
 
             return view;
+        }
+
+        private void Fab_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(view.Context, typeof(AddShoppingListActivity));
+            StartActivity(intent);
         }
 
         public override void OnPrepareOptionsMenu(IMenu menu)

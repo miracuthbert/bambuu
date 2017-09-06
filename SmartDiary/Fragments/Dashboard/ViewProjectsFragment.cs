@@ -46,11 +46,7 @@ namespace SmartDiary.Droid
 
             FloatingActionButton fab = Activity.FindViewById<FloatingActionButton>(Resource.Id.fab);
 
-            fab.Click += (o, e) =>
-            {
-                Intent intent = new Intent(view.Context, typeof(AddProjectActivity));
-                StartActivity(intent);
-            };
+            fab.Click += Fab_Click;
 
             mListProjects = view.FindViewById<ListView>(Resource.Id.listProjects);
 
@@ -64,6 +60,17 @@ namespace SmartDiary.Droid
             mListProjects.ContextMenuCreated += MListProjects_ContextMenuCreated;
 
             return view;
+        }
+
+        /// <summary>
+        /// Floating Button Action Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Fab_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(view.Context, typeof(AddProjectActivity));
+            StartActivity(intent);
         }
 
         public override void OnPrepareOptionsMenu(IMenu menu)
@@ -157,7 +164,7 @@ namespace SmartDiary.Droid
         }
 
         //populate list
-        private async void populateProjectList(View view)
+        private void populateProjectList(View view)
         {
             projects = ProjectsCollection.GetProjects();
             adapter = new ProjectsAdapter(view.Context, projects);

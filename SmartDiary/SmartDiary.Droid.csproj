@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddBudgetActivity.cs" />
+    <Compile Include="ViewActivity.cs" />
     <Compile Include="AddEditActivity.cs" />
     <Compile Include="AddGoalActivity.cs" />
     <Compile Include="AddGoalTaskActivity.cs" />
@@ -118,11 +119,11 @@
     <Compile Include="EditGoalActivity.cs" />
     <Compile Include="EditProjectActivity.cs" />
     <Compile Include="EditShoppingListActivity.cs" />
-    <Compile Include="Fragments\AddBudgetFragment.cs" />
-    <Compile Include="Fragments\AddBudgetItemFragment.cs" />
+    <Compile Include="Fragments\Budgets\AddBudgetFragment.cs" />
+    <Compile Include="Fragments\Budgets\AddBudgetItemFragment.cs" />
     <Compile Include="Fragments\AddMeetingFragment.cs" />
     <Compile Include="Fragments\DatePickerFragment.cs" />
-    <Compile Include="Fragments\GoalTaskFragment.cs" />
+    <Compile Include="Fragments\Goals\GoalTaskFragment.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\Goals.cs" />
     <Compile Include="Models\GoalTasks.cs" />
@@ -143,12 +144,12 @@
     <Compile Include="SlidingTabScrollView.cs" />
     <Compile Include="SlidingTabsFragment.cs" />
     <Compile Include="SlidingTabStrip.cs" />
-    <Compile Include="Fragments\ViewBudgetsFragment.cs" />
+    <Compile Include="Fragments\Dashboard\ViewBudgetsFragment.cs" />
     <Compile Include="SplashScreenActivity.cs" />
     <Compile Include="ViewGoalActivity.cs" />
-    <Compile Include="Fragments\ViewGoalsFragment.cs" />
-    <Compile Include="Fragments\ViewGoalFragment.cs" />
-    <Compile Include="Fragments\ViewGoalTasksFragment.cs" />
+    <Compile Include="Fragments\Dashboard\ViewGoalsFragment.cs" />
+    <Compile Include="Fragments\Goals\ViewGoalFragment.cs" />
+    <Compile Include="Fragments\Goals\ViewGoalTasksFragment.cs" />
     <Compile Include="Adapters\GoalsAdapter.cs" />
     <Compile Include="Adapters\GoalTasksAdapter.cs" />
     <Compile Include="Adapters\ProjectsAdapter.cs" />
@@ -159,14 +160,14 @@
     <Compile Include="ViewModel\SQLiteAsync.cs" />
     <Compile Include="ViewModel\DBHelper.cs" />
     <Compile Include="ViewProjectActivity.cs" />
-    <Compile Include="Fragments\ViewProjectsFragment.cs" />
-    <Compile Include="Fragments\ViewShoppingItemsFragment.cs" />
-    <Compile Include="Fragments\ViewShoppingItemFragment.cs" />
-    <Compile Include="Fragments\ViewProjectFragment.cs" />
-    <Compile Include="Fragments\ViewProjectTasksFragment.cs" />
+    <Compile Include="Fragments\Dashboard\ViewProjectsFragment.cs" />
+    <Compile Include="Fragments\Shopping\ViewShoppingItemsFragment.cs" />
+    <Compile Include="Fragments\Shopping\ViewShoppingItemFragment.cs" />
+    <Compile Include="Fragments\Projects\ViewProjectFragment.cs" />
+    <Compile Include="Fragments\Projects\ViewProjectTasksFragment.cs" />
     <Compile Include="ViewShoppingListActivity.cs" />
-    <Compile Include="Fragments\ViewShoppingListFragment.cs" />
-    <Compile Include="Fragments\ViewShoppingListsFragment.cs" />
+    <Compile Include="Fragments\Shopping\ViewShoppingListFragment.cs" />
+    <Compile Include="Fragments\Dashboard\ViewShoppingListsFragment.cs" />
     <Compile Include="Views\GoalsCollection.cs" />
     <Compile Include="Views\ProjectsCollection.cs" />
     <Compile Include="Views\ShoppingCollection.cs" />
@@ -247,6 +248,7 @@
     <AndroidResource Include="Resources\layout\DashboardPro.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\ViewShoppingItem.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">

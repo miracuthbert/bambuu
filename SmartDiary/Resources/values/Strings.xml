@@ -27,4 +27,6 @@
     <item>Normal</item>
     <item>Important</item>
   </string-array>
+
+  <string name="viewActivityTitle">Details</string>
 </resources>

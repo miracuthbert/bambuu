@@ -51,11 +51,7 @@ namespace SmartDiary.Droid
 
             FloatingActionButton fab = Activity.FindViewById<FloatingActionButton>(Resource.Id.fab);
 
-            fab.Click += (o, e) =>
-            {
-                Intent intent = new Intent(view.Context, typeof(AddGoalActivity));
-                StartActivity(intent);
-            };
+            fab.Click += Fab_Click;
 
             SetUpRecyclerView(view);
 
@@ -74,6 +70,17 @@ namespace SmartDiary.Droid
 
             return view;
 
+        }
+
+        /// <summary>
+        /// Floating button click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Fab_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(view.Context, typeof(AddGoalActivity));
+            StartActivity(intent);
         }
 
         private void SetUpRecyclerView(RecyclerView view)
@@ -234,27 +241,29 @@ namespace SmartDiary.Droid
 
                 int days = Convert.ToInt32(DateTime.Parse(mGoals[position].GoalDeadline).Subtract(DateTime.Today).TotalDays);
 
+                mHolder.myGoalId.Text = mGoals[position].Id.ToString();
+                mHolder.myGoal.Text = mGoals[position].Goal;
+                mHolder.myGoalDeadline.Text = mGoals[position].GoalDeadline;
+                mHolder.myGoalStatus.Text = mGoals[position].GoalStatus;
+
                 if (mGoals[position].GoalStatus.Equals("Pending"))
                 {
-                    //mHolder.myGoalStatus.SetTextColor(Android.Graphics.Color.Rgb(183, 28, 28));
-                    mHolder.myGoalStatus.SetTextColor(Android.Graphics.Color.White);
+                    mHolder.myGoalStatusIcon.SetImageResource(Resource.Drawable.ic_hour_glass);
+
                     if (days < 0)
                     {
-                        mHolder.mView.SetBackgroundColor(Android.Graphics.Color.Rgb(183, 28, 28));
                         mHolder.myGoalNotify.Text = "Goal is " + (days * -1) + " day(s) past deadline. Do something!";
-                        mHolder.myGoalNotify.SetBackgroundColor(Android.Graphics.Color.Rgb(236, 64, 122));
+                        mHolder.myGoalNotify.SetTextColor(Android.Graphics.Color.Rgb(236, 64, 122));
                     }
                     else if (days == 0)
                     {
-                        mHolder.mView.SetBackgroundColor(Android.Graphics.Color.Rgb(255, 82, 82));
                         mHolder.myGoalNotify.Text = "Today is the goal's deadline. Do something!";
-                        mHolder.myGoalNotify.SetBackgroundColor(Android.Graphics.Color.Rgb(240, 98, 146));
+                        mHolder.myGoalNotify.SetTextColor(Android.Graphics.Color.Rgb(240, 98, 146));
                     }
                     else if (days > 0 && days <= 14)
                     {
-                        mHolder.mView.SetBackgroundColor(Android.Graphics.Color.Rgb(239, 154, 154));
                         mHolder.myGoalNotify.Text = days + " day(s) left to goal deadline. Do something!";
-                        mHolder.myGoalNotify.SetBackgroundColor(Android.Graphics.Color.Rgb(244, 143, 177));
+                        mHolder.myGoalNotify.SetTextColor(Android.Graphics.Color.Rgb(244, 143, 177));
                     }
                     else if (days > 14)
                     {
@@ -264,17 +273,13 @@ namespace SmartDiary.Droid
                 }
                 else if (goal.GoalStatus.Equals("Completed"))
                 {
-                    mHolder.mView.SetBackgroundColor(Android.Graphics.Color.Rgb(46, 125, 50));
-                    mHolder.myGoal.SetTextColor(Android.Graphics.Color.White);
-                    mHolder.myGoalStatus.SetTextColor(Android.Graphics.Color.White);
-                    mHolder.myGoalNotify.Visibility = ViewStates.Gone;
-                    mHolder.myGoalDeadline.Visibility = ViewStates.Gone;
+                    mHolder.myGoal.SetTextColor(Android.Graphics.Color.Gray);
+                    mHolder.myGoalStatus.SetTextColor(Android.Graphics.Color.Green);
+                    mHolder.myGoalStatusIcon.SetImageResource(Resource.Drawable.ic_checkmark);
+                    mHolder.myGoalStatusIcon.SetBackgroundColor(Android.Graphics.Color.ForestGreen);
+                    mHolder.myGoalNotify.Text = "Goal completed at " + goal.GoalUpdated;
+                    mHolder.myGoalDeadline.SetTextColor(Android.Graphics.Color.Gray);
                 }
-
-                mHolder.myGoalId.Text = mGoals[position].Id.ToString();
-                mHolder.myGoal.Text = mGoals[position].Goal;
-                mHolder.myGoalDeadline.Text = mGoals[position].GoalDeadline;
-                mHolder.myGoalStatus.Text = mGoals[position].GoalStatus;
 
             }
             catch (Exception ex)
@@ -313,6 +318,7 @@ namespace SmartDiary.Droid
         public TextView myGoalDeadline;
         public TextView myGoalStatus;
         public TextView myGoalNotify;
+        public ImageView myGoalStatusIcon;
 
 
         public GoalView(View view, Action<int> listener) : base(view)
@@ -322,6 +328,7 @@ namespace SmartDiary.Droid
             myGoal = mView.FindViewById<TextView>(Resource.Id.GoalName);
             myGoalDeadline = mView.FindViewById<TextView>(Resource.Id.GoalDeadline);
             myGoalStatus = mView.FindViewById<TextView>(Resource.Id.GoalStatus);
+            myGoalStatusIcon = mView.FindViewById<ImageView>(Resource.Id.GoalStatusIcon);
             myGoalNotify = mView.FindViewById<TextView>(Resource.Id.GoalNotification);
 
             view.Click += (sender, e) => listener(base.Position);
